@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.entity.ProductEntity;
-import com.example.demo.entity.ProductResponse;
 import com.example.demo.service.ProductsService;
 
 @Controller
@@ -42,7 +41,7 @@ public class ProductController {
 	// R
 	@GetMapping(value = "/getallproducts", produces = { "application/json", "application/xml" })
 	public ResponseEntity getAllProducts() {
-		return new ResponseEntity(new ProductResponse(productService.getAllProducts()), HttpStatus.OK);
+		return new ResponseEntity(productService.getAllProducts(), HttpStatus.OK);
 	}
 
 	// D
