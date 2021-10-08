@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.ProductEntity;
 import com.example.demo.entity.ProductResponse;
@@ -46,8 +48,8 @@ public class ProductController {
 	}
 
 	// D
-	@DeleteMapping(value="/deleteproduct/{productId}", produces = { "application/json", "application/xml" })
-	public ResponseEntity deleteProduct(@PathVariable("productId") int productId) {
+	@DeleteMapping(value="/deleteproduct", produces = { "application/json", "application/xml" })
+	public ResponseEntity deleteProduct(@RequestParam("productId") int productId) {
         
 		return new ResponseEntity(productService.deleteProduct(productId),HttpStatus.OK);
 	}

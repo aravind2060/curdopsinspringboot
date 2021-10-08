@@ -4,19 +4,21 @@ import java.util.List;
 
 public class ProductResponse {
 
-	private List<ProductEntity> list;
+	private List<ProductEntity> products;
 
-	public ProductResponse(List<ProductEntity> list) {
+	public ProductResponse(List<ProductEntity> products) {
 		super();
-		this.list = list;
+		this.products = products;
 	}
 
-	public List<ProductEntity> getList() {
-		return list;
+	public List<ProductEntity> getProducts() {
+		return products;
 	}
 
-	public void setList(List<ProductEntity> list) {
-		this.list = list;
+	public void setProducts(List<ProductEntity> products) {
+		this.products = products;
 	}
+
+	
 
 }
