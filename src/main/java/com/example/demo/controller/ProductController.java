@@ -30,13 +30,13 @@ public class ProductController {
 	private ProductsService productService;
 
 	// c
-	@PostMapping(value = "/addproduct", consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
+	@PostMapping(value = "/addproduct", consumes = { "application/json", "application/xml" }, produces = { "application/xml" })
 	public ResponseEntity storeProduct(@RequestBody ProductEntity productEntity) {
 		return new ResponseEntity(productService.addProduct(productEntity), HttpStatus.CREATED);
 	}
 
 	// U
-	@PutMapping(value = "/updateproduct", consumes = { "application/json", "application/xml" }, produces = { "application/json", "application/xml" })
+	@PutMapping(value = "/updateproduct", consumes = { "application/json", "application/xml" }, produces = {  "application/xml" })
 	public ResponseEntity updateProduct(@RequestBody ProductEntity productEntity) {
         return new ResponseEntity(productService.updateProduct(productEntity),HttpStatus.OK);
 	}
